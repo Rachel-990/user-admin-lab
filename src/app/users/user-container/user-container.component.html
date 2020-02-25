@@ -1,0 +1,22 @@
+<div class="user-item">
+    <div>
+      id:{{currentuser.id}}
+    </div>
+    <div>
+      username:{{currentuser.username}}
+    </div>
+    <div>
+      email:{{currentuser.email}}
+    </div>
+    <div>
+       enter name:
+        <input type="text"  [value] = "currentuser.email" #emailInput>
+      </div>
+      <div>
+        enter emale:
+         <input type="text" [value] = "currentuser.username" #nameInput>
+       </div>
+       <div>
+        <button (clic)="saveuserData(emailInput.value,nameInput.value)">save</button>
+       </div>
+  </div>

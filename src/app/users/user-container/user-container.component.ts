@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserModel } from 'src/app/models/UserModel';
+import { USERS } from 'src/app/mocks/users.mock';
 
 @Component({
   selector: 'app-user-container',
@@ -7,19 +8,23 @@ import { UserModel } from 'src/app/models/UserModel';
   styleUrls: ['./user-container.component.css']
 })
 export class UserContainerComponent implements OnInit {
-  currentuser: UserModel;
-  arrayUser:UserModel[];
-  
+  public currentuser: UserModel;
+  public arrayUser: Array<UserModel>;
+
   constructor() { }
 
   ngOnInit(): void {
     console.log("the user container init!!!")
     this.currentuser = new UserModel();
-
+    this.arrayUser = USERS;
   }
 
   saveuserData(emailValue: string, nameValue: string) {
-    this.currentuser.email = emailValue;
-    this.currentuser.username = nameValue;
+    //this.currentuser.email = emailValue;
+    //this.currentuser.username = nameValue;
+  }
+
+  onUserSelected(u: UserModel) {
+    this.currentuser = u;
   }
 }

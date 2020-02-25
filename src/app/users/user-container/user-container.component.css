@@ -1,3 +1,7 @@
 .user-item{
     background-color:papayawhip ;
 }
+
+.selected{
+    background-color:red ;
+}
